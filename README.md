@@ -6,19 +6,22 @@ It is currently based on Ubuntu:18.04.
 
 # Usage
 
-Launch notebook
+Step 1) Launch notebook server
 
-**NOTE**: make sure to download the notebooks that you want to save because the `--rm` will remove container when complete).
-
-```bash
-docker run -it --rm -p 8888:8888 rcon2/jupyter
-```
-
-The default working directory is `/volume/notebook`. To mount that you could do
+Notebooks will be created in your local ./notebook folder. If it doesn't exist, it will be created.
 
 ```bash
-docker run -it --rm -p 8888:8888 -v $(pwd)/notebook:/volume/notebook rcon2/jupyter
+docker run -it --rm -p 8888:8888 -v $(pwd)/notebook:/volume/notebook --name jupyter-notebook rcon2/jupyter
 ```
+
+Step 2) Get token
+
+```bash
+docker exec -it jupyter-notebook jupyter notebook list | tail -n1 | perl -pe 's,^.*?token=(.*?) ::.*,\1,'
+```
+
+Step 3) Copy token and navigate to http://127.0.0.1:8888/?token=<token>
+
 
 ---
 
