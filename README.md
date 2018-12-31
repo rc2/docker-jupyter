@@ -20,7 +20,7 @@ Step 2) Get token
 docker exec -it jupyter-notebook jupyter notebook list | tail -n1 | perl -pe 's,^.*?token=(.*?) ::.*,\1,'
 ```
 
-Step 3) Copy token and navigate to http://127.0.0.1:8888/?token=<token>
+Step 3) Copy token and navigate to http://127.0.0.1:8888/?token=TOKEN
 
 
 ---
