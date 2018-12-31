@@ -29,13 +29,13 @@ Step 3) Copy token and navigate to http://127.0.0.1:8888/?token=TOKEN
 
 Planning to add to this over time.
 
-- javascript (https://github.com/n-riesco/ijavascript)
-- bash
-- octave
-- powershell (https://github.com/Jaykul/Jupyter-PowerShell)
-- python3
-- sos
-- go (https://github.com/gopherdata/gophernotes)
+- Bash
+- Go (https://github.com/gopherdata/gophernotes)
+- Javascript (https://github.com/n-riesco/ijavascript)
+- Octave
+- Powershell (https://github.com/Jaykul/Jupyter-PowerShell)
+- Python3
+- SoS
 
 # Links
 
