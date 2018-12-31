@@ -55,6 +55,17 @@ RUN mv /staging/jupyter-powershell/Output/Release/Linux /usr/local/support/jupyt
 RUN perl -i -p -e 's,"PowerShell-Kernel","/usr/local/support/jupyter/powershell/PowerShell-Kernel",' /usr/local/support/jupyter/powershell/kernel.json
 RUN jupyter kernelspec install /usr/local/support/jupyter/powershell
 
+# install-kernel: go
+RUN apt-get install -y golang
+RUN mkdir -p /usr/local/go
+ENV GOPATH "/usr/local/go"
+ENV PATH "$PATH:$GOPATH/bin"
+RUN apt-get install -y libczmq-dev
+RUN GOPATH="/usr/local/go" go get -u github.com/gopherdata/gophernotes
+RUN perl -i -p -e 's,gophernotes,/usr/local/go/bin/gophernotes,' /usr/local/go/src/github.com/gopherdata/gophernotes/kernel/kernel.json
+RUN mkdir $(jupyter --data-dir)/kernels/go
+RUN cp usr/local/go/src/github.com/gopherdata/gophernotes/kernel/kernel.json $(jupyter --data-dir)/kernels/go
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook

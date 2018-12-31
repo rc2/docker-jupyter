@@ -35,6 +35,7 @@ Planning to add to this over time.
 - powershell (https://github.com/Jaykul/Jupyter-PowerShell)
 - python3
 - sos
+- go (https://github.com/gopherdata/gophernotes)
 
 # Links
 
