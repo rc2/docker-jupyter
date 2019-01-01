@@ -72,6 +72,11 @@ RUN apt-get install -y r-base r-base-dev
 RUN echo "install.packages('IRkernel')" | R --no-save
 RUN echo "IRkernel::installspec(user = FALSE)" | R --no-save
 
+# install-kernel: java
+RUN apt-get install -y openjdk-11-jdk-headless
+RUN cd /staging && git clone https://github.com/SpencerPark/IJava.git ijava
+RUN cd /staging/ijava && chmod u+x gradlew && ./gradlew installKernel
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook

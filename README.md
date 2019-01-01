@@ -31,6 +31,7 @@ Planning to add to this over time.
 
 - Bash
 - Go (https://github.com/gopherdata/gophernotes)
+- Java (https://github.com/SpencerPark/IJava.git)
 - Javascript (https://github.com/n-riesco/ijavascript)
 - Octave
 - Powershell (https://github.com/Jaykul/Jupyter-PowerShell)
