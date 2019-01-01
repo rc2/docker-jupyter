@@ -66,6 +66,12 @@ RUN perl -i -p -e 's,gophernotes,/usr/local/go/bin/gophernotes,' /usr/local/go/s
 RUN mkdir $(jupyter --data-dir)/kernels/go
 RUN cp usr/local/go/src/github.com/gopherdata/gophernotes/kernel/kernel.json $(jupyter --data-dir)/kernels/go
 
+# install-kernel: r
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata
+RUN apt-get install -y r-base r-base-dev 
+RUN echo "install.packages('IRkernel')" | R --no-save
+RUN echo "IRkernel::installspec(user = FALSE)" | R --no-save
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook

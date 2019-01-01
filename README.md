@@ -35,6 +35,7 @@ Planning to add to this over time.
 - Octave
 - Powershell (https://github.com/Jaykul/Jupyter-PowerShell)
 - Python3
+- R
 - SoS
 
 # Links
