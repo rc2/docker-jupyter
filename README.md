@@ -39,6 +39,7 @@ Planning to add to this over time.
 - Powershell (https://github.com/Jaykul/Jupyter-PowerShell)
 - Python3
 - R
+- Ruby (https://github.com/SciRuby/iruby)
 - SoS
 
 # Links

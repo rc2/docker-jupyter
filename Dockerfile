@@ -93,6 +93,11 @@ RUN cp /usr/local/share/jupyter/kernels/jupyter-php/kernel.json /staging/jupyter
 RUN yes | jupyter kernelspec uninstall jupyter-php
 RUN cd /staging/jupyter-php && jupyter kernelspec install php
 
+# install-kernel: ruby
+RUN apt-get install -y libtool libffi-dev ruby ruby-dev make libzmq3-dev libczmq-dev
+RUN gem install cztop iruby
+RUN iruby register --force
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook
