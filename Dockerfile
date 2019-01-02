@@ -77,6 +77,10 @@ RUN apt-get install -y openjdk-11-jdk-headless
 RUN cd /staging && git clone https://github.com/SpencerPark/IJava.git ijava
 RUN cd /staging/ijava && chmod u+x gradlew && ./gradlew installKernel
 
+# install-kernel: c
+RUN pip3 install jupyter-c-kernel
+RUN install_c_kernel
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook

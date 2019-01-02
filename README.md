@@ -30,6 +30,7 @@ Step 3) Copy token and navigate to http://127.0.0.1:8888/?token=TOKEN
 Planning to add to this over time.
 
 - Bash
+- C (https://github.com/brendan-rius/jupyter-c-kernel)
 - Go (https://github.com/gopherdata/gophernotes)
 - Java (https://github.com/SpencerPark/IJava.git)
 - Javascript (https://github.com/n-riesco/ijavascript)
