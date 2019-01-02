@@ -81,6 +81,18 @@ RUN cd /staging/ijava && chmod u+x gradlew && ./gradlew installKernel
 RUN pip3 install jupyter-c-kernel
 RUN install_c_kernel
 
+# install-kernel: php
+RUN apt-get install -y composer
+RUN apt-get install -y php-zmq
+RUN mkdir /staging/jupyter-php
+RUN cd /staging/jupyter-php
+RUN curl https://litipk.github.io/Jupyter-PHP-Installer/dist/jupyter-php-installer.phar > /staging/jupyter-php/installer.phar
+RUN cd /staging/jupyter-php && php installer.phar install
+RUN mkdir /staging/jupyter-php/php
+RUN cp /usr/local/share/jupyter/kernels/jupyter-php/kernel.json /staging/jupyter-php/php/kernel.json
+RUN yes | jupyter kernelspec uninstall jupyter-php
+RUN cd /staging/jupyter-php && jupyter kernelspec install php
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook
