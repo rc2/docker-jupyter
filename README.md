@@ -35,6 +35,7 @@ Planning to add to this over time.
 - Java (https://github.com/SpencerPark/IJava.git)
 - Javascript (https://github.com/n-riesco/ijavascript)
 - Octave
+- Perl (https://github.com/EntropyOrg/p5-Devel-IPerl)
 - PHP (https://github.com/Litipk/Jupyter-PHP)
 - Powershell (https://github.com/Jaykul/Jupyter-PowerShell)
 - Python3

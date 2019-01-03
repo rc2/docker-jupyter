@@ -98,6 +98,10 @@ RUN apt-get install -y libtool libffi-dev ruby ruby-dev make libzmq3-dev libczmq
 RUN gem install cztop iruby
 RUN iruby register --force
 
+# install-kernel: perl
+RUN yes | cpan Devel::IPerl
+RUN iperl kernel
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook
