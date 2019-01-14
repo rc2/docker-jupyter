@@ -102,6 +102,11 @@ RUN iruby register --force
 RUN yes | cpan Devel::IPerl
 RUN iperl kernel
 
+# install-kernel: rust
+RUN apt-get install -y rustc cargo
+RUN cargo install evcxr_jupyter
+RUN /root/.cargo/bin/evcxr_jupyter --install
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook

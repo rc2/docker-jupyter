@@ -41,6 +41,7 @@ Planning to add to this over time.
 - Python3
 - R
 - Ruby (https://github.com/SciRuby/iruby)
+- Rust (https://github.com/google/evcxr)
 - SoS
 
 # Links
