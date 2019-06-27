@@ -43,6 +43,7 @@ RUN pip3 install bash_kernel
 RUN python3 -m bash_kernel.install
 
 # install-kernel: octave
+RUN apt-get install -y octave
 RUN pip3 install octave_kernel
 RUN python3 -m octave_kernel install
 
