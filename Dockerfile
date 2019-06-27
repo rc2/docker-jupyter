@@ -108,6 +108,10 @@ RUN apt-get install -y rustc cargo
 RUN cargo install evcxr_jupyter
 RUN /root/.cargo/bin/evcxr_jupyter --install
 
+# install-kernel: typescript
+RUN npm install -g itypescript
+RUN its --install=global
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook

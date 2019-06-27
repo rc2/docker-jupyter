@@ -43,6 +43,7 @@ Planning to add to this over time.
 - Ruby (https://github.com/SciRuby/iruby)
 - Rust (https://github.com/google/evcxr)
 - SoS
+- TypeScript (https://www.npmjs.com/package/itypescript)
 
 # Links
 
