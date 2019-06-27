@@ -1,6 +1,6 @@
 # Intro
 
-This is a jupyter notebook with several kernels installed.
+This is a jupyter ~notebook~ lab with several kernels installed.
 
 It is currently based on Ubuntu:18.04.
 
