@@ -15,6 +15,7 @@ RUN apt-get install git -y
 
 # install: juypter
 RUN python3 -m pip install jupyter
+RUN python3 -m pip install jupyterlab
 RUN python3 -m pip install sos
 RUN python3 -m pip install sos-notebook
 RUN python3 -m sos_notebook.install
@@ -112,6 +113,11 @@ RUN /root/.cargo/bin/evcxr_jupyter --install
 RUN npm install -g itypescript
 RUN its --install=global
 
+# install-kernel: sos (for jupyter lab)
+RUN python3 -m pip install jupyterlab==1.0.0-alpha.3
+RUN jupyter labextension install transient-display-data
+RUN jupyter labextension install jupyterlab-sos
+
 # workdir
 RUN mkdir -p /volume/notebook
 WORKDIR /volume/notebook
@@ -120,4 +126,4 @@ WORKDIR /volume/notebook
 
 EXPOSE 8888
 
-CMD jupyter notebook --ip=0.0.0.0 --port=8888 --allow-root
+CMD jupyter lab --ip=0.0.0.0 --port=8888 --allow-root
